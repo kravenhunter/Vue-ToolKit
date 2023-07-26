@@ -36,8 +36,8 @@ const tabs = [
   { name: "AddAutoFill", label: "Grid AutoFill Blocks", comp: AddAutoFill },
   { name: "AddPositionsGrid", label: "Position Group", comp: AddPositionsGrid },
   { name: "AddAbsolutePosGrid", label: "Absolute Position Group", comp: AddAbsolutePosGrid },
-  { name: "Right Position Grid", label: "Layout 1", comp: RightPositionGrid },
-  { name: "Right Position Grid 2", label: "Layout 2", comp: RightPositionGrid2 },
+  { name: "RightPositionGrid", label: "Right Position Grid 1", comp: RightPositionGrid },
+  { name: "RightPositionGrid2", label: "LayRight Position Gridout 2", comp: RightPositionGrid2 },
   { name: "GridSlot", label: "Grid Slot", comp: TestGridSlot },
   { name: "GhildsPosition", label: "Grid Ghilds Position", comp: GhildsPosition },
 ];
