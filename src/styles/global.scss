@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap');
+
+:root {
+    --primary: #6979f8;
+    --primary-hover: #A5AFFB;
+    --second: #BE52F2;
+    --second-hover: #DBA5F5;
+    --success: #00C48C;
+    --success-hover: #7DDFC3;
+    --info: #0084F4;
+    --info-hover: #66B5F8;
+    --warning: #FFA26B;
+    --warning-hover: #FFC7A6;
+    --danger: #FF647C;
+    --danger-hover: #FDAFBB;
+    --indexSize:calc(1vw + 1vh); // делаем размер резиновым, относительно размером  высоты и ширины экрана, применяем и для блоков и для шрифта
+
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: #fafafa;
+    margin: 0;
+  }
+  
+  a {
+    color: var(--primary);
+    text-decoration: none;  
+  }
+  a:hover,
+  a.router-link-active{
+    border-bottom: 2px solid #3498db;
+  }
+  
+  .line {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    &_block {
+      display: block;
+    }
+  }
+  .cards{
+    margin-top: 10px;
+  }
