@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref } from "vue";
 
 // Создаем пропсы и задаем входные параметры
 const props = defineProps({
@@ -9,48 +9,41 @@ const props = defineProps({
   },
 });
 // Настроить динамическое извлечение названий файлов vue из папки и также  в роутинге
-const links = ref(
-   [
-       {name: 'Typography', href: '/typography'},
-       {name: 'Accordions', href: '/accordions'},
-       {name: 'Animation', href: '/animation'},
-       {name: 'Animation NavBars', href: '/navbars'},
-       {name: 'ButtonConfig', href: '/buttonconfig'},
-       {name: 'CheckBox & Events', href: '/checkbox'},
-       {name: 'Grid & Events', href: '/grid'},
- /*       {name: 'Flex', href: '/flex'}, */
-       {name: 'RadioButton', href: '/radiobutton'},
-       {name: 'ProgressBar', href: '/progressbar'},
-       {name: 'Forms', href: '/forms'},
-       {name: 'Tabs-Slots', href: '/tabs'},
-       {name: 'Tables', href: '/table'},
-       {name: 'Cards Page', href: '/cards'},
-       {name: 'Comments', href: '/comments'},
-/*        {name: 'Paralax', href: '/paralax'},
+const links = ref([
+  { name: "Adaptive", href: "/adaptive" },
+  { name: "Accordions", href: "/accordions" },
+  { name: "Accordions", href: "/accordions" },
+  { name: "Animation", href: "/animation" },
+  { name: "Animation NavBars", href: "/navbars" },
+  { name: "ButtonConfig", href: "/buttonconfig" },
+  { name: "CheckBox & Events", href: "/checkbox" },
+  { name: "Grid & Events", href: "/grid" },
+  /*       {name: 'Flex', href: '/flex'}, */
+  { name: "RadioButton", href: "/radiobutton" },
+  { name: "ProgressBar", href: "/progressbar" },
+  { name: "Forms", href: "/forms" },
+  { name: "Tabs-Slots", href: "/tabs" },
+  { name: "Tables", href: "/table" },
+  { name: "Cards Page", href: "/cards" },
+  { name: "Comments", href: "/comments" },
+  /*        {name: 'Paralax', href: '/paralax'},
        {name: 'List', href: '/canvas'},
        {name: 'Tougle', href: '/tougle'},
        {name: 'Animation', href: '/anime'},
        {name: 'Images', href: '/image'},
        {name: 'Canvas', href: '/canvas'}, */
-
-   ]
-)
+]);
 </script>
 
 <!-- доп класс sidebar_isopen добавляется тогда когда openSidebar = true-->
 <!--можно записать так  {sidebar_isopen: openSidebar === true}] -->
 <template>
-      <div :class="['sidebar', {sidebar_isopen: openSidebar}]">
-          <router-link
-          class="sidebar__link"
-          v-for="link in links"
-          :key="link.name"
-          :to="link.href"
-          >{{ link.name }}</router-link>
-      </div>
- </template>
- <style lang="scss" scoped>
- .sidebar {
+  <div :class="['sidebar', { sidebar_isopen: openSidebar }]">
+    <router-link class="sidebar__link" v-for="link in links" :key="link.name" :to="link.href">{{ link.name }}</router-link>
+  </div>
+</template>
+<style lang="scss" scoped>
+.sidebar {
   left: 0;
   top: 62px;
   height: 100%;
@@ -77,4 +70,4 @@ const links = ref(
     }
   }
 }
- </style>
+</style>

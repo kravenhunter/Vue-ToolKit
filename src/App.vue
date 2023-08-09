@@ -1,3 +1,39 @@
+<script setup>
+// import HelloWorld from '@/components/HelloWorld.vue'
+import LayoutHeader from "@/components/layout/Header.vue";
+import LayoutSidebar from "@/components/layout/SideBar.vue";
+import { onMounted, ref } from "vue";
+import { RouterLink, RouterView } from "vue-router";
+// Либа для плавного скролла
+import { gsap } from "gsap-trial";
+import { ScrollSmoother } from "gsap-trial/ScrollSmoother.js";
+import { ScrollTrigger } from "gsap-trial/ScrollTrigger.js";
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+const arr = ref([]);
+
+// Создаем межденый скрол
+onMounted(async () => {
+  let resData = await fetch("https://jsonplaceholder.typicode.com/posts");
+  arr.value = await resData.json();
+
+  console.log("app arr", arr.value);
+  ScrollSmoother.create({
+    //wrapper: "#smooth-wrapper",
+    //content: " #smooth-content",
+    wrapper: "#app",
+    content: ".container",
+  });
+});
+
+const isOpenMenu = ref(false);
+const toggleMenu = () => {
+  isOpenMenu.value = !isOpenMenu.value;
+  // обращаемся к противоположному значение если isOpenMenu.value = афдыу
+  // то значит теперь isOpenMenu.value = true  и наоборот при вызове функции toggleMenu она перезаписывает
+  // isOpenMenu противоположным значением
+};
+</script>
+
 <template>
   <div class="container">
     <div class="sidebar-toggle" @click="toggleMenu">&#5125;</div>
@@ -37,42 +73,6 @@
   </div>
 </template>
 
-<script setup>
-// import HelloWorld from '@/components/HelloWorld.vue'
-import { RouterView, RouterLink } from "vue-router";
-import LayoutHeader from "@/components/layout/Header.vue";
-import LayoutSidebar from "@/components/layout/SideBar.vue";
-import { ref, onMounted } from "vue";
-// Либа для плавного скролла
-import { gsap } from "gsap-trial";
-import { ScrollSmoother } from "gsap-trial/ScrollSmoother.js";
-import { ScrollTrigger } from "gsap-trial/ScrollTrigger.js";
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-const arr = ref([]);
-
-// Создаем межденый скрол
-onMounted(async () => {
-  let resData = await fetch("https://jsonplaceholder.typicode.com/posts");
-  arr.value = await resData.json();
-
-  console.log("app arr", arr.value);
-  ScrollSmoother.create({
-    //wrapper: "#smooth-wrapper",
-    //content: " #smooth-content",
-    wrapper: "#app",
-    content: ".container",
-  });
-});
-
-const isOpenMenu = ref(false);
-const toggleMenu = () => {
-  isOpenMenu.value = !isOpenMenu.value;
-  // обращаемся к противоположному значение если isOpenMenu.value = афдыу
-  // то значит теперь isOpenMenu.value = true  и наоборот при вызове функции toggleMenu она перезаписывает
-  // isOpenMenu противоположным значением
-};
-</script>
-
 <style lang="scss">
 @import "@/styles/global.scss";
 #app {
@@ -109,13 +109,16 @@ const toggleMenu = () => {
   }
 }
 .content {
-  max-width: 1400px;
+  max-width: 100%;
   margin-left: 250px;
   padding: 30px;
   transition: 0.2s;
   &_full {
     margin-left: 0;
   }
+}
+.full_height {
+  height: 100vh;
 }
 .sidebar-toggle {
   position: fixed;

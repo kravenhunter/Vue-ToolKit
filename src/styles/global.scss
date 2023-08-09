@@ -1,50 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap");
 
 :root {
-    --primary: #6979f8;
-    --primary-hover: #A5AFFB;
-    --second: #BE52F2;
-    --second-hover: #DBA5F5;
-    --success: #00C48C;
-    --success-hover: #7DDFC3;
-    --info: #0084F4;
-    --info-hover: #66B5F8;
-    --warning: #FFA26B;
-    --warning-hover: #FFC7A6;
-    --danger: #FF647C;
-    --danger-hover: #FDAFBB;
-    --indexSize:calc(1vw + 1vh); // делаем размер резиновым, относительно размером  высоты и ширины экрана, применяем и для блоков и для шрифта
+  --color-light: #ffffff;
+  --color-grey: #f2f2f2;
+  --color-dark: #000000;
+  --color-violet: #3e3683;
+  --color-darkBlue: #516eaa;
+  --color-azule: #29c5f6;
+  --color-red: #e14f42;
+  --color-orange: #febe2b;
+  --color-link: #646cff;
+  --color-link-hover: #535bf2;
+  --primary: #007bff;
+  --primary-light: #e2e6ea;
+  --primary-hover: #a5affb;
+  --second: #343a40;
+  --second-hover: #5a6268;
+  --success: #28a745;
+  --success-hover: #7ddfc3;
+  --info: #17a2b8;
+  --info-hover: #66b5f8;
+  --warning: #ffc107;
+  --warning-hover: #ffc7a6;
+  --danger: #dc3545;
+  --danger-hover: #fdafbb;
+  --indexSize: calc(1vw + 1vh); // делаем размер резиновым, относительно размером  высоты и ширины экрана, применяем и для блоков и для шрифта
+}
 
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+body {
+  background: #fafafa;
+  margin: 0;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover,
+a.router-link-active {
+  border-bottom: 2px solid #3498db;
+}
+
+.line {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  &_block {
+    display: block;
   }
-  
-  body {
-    background: #fafafa;
-    margin: 0;
-  }
-  
-  a {
-    color: var(--primary);
-    text-decoration: none;  
-  }
-  a:hover,
-  a.router-link-active{
-    border-bottom: 2px solid #3498db;
-  }
-  
-  .line {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-    &_block {
-      display: block;
-    }
-  }
-  .cards{
-    margin-top: 10px;
-  }
+}
+.cards {
+  margin-top: 10px;
+}
