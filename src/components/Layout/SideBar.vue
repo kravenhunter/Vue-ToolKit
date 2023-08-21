@@ -11,6 +11,7 @@ const props = defineProps({
 // Настроить динамическое извлечение названий файлов vue из папки и также  в роутинге
 const links = ref([
   { name: "Adaptive", href: "/adaptive" },
+  { name: "EditorTab", href: "/editors" },
   { name: "Accordions", href: "/accordions" },
   { name: "Accordions", href: "/accordions" },
   { name: "Animation", href: "/animation" },

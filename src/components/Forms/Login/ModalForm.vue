@@ -45,6 +45,13 @@ const showModalHandler = (event) => {
   //Удобнее пользоваться
   toggle?.classList.toggle("active");
 };
+
+const onChange = (event) => {
+  console.log(event);
+};
+const uploadData = (event) => {
+  console.log(event);
+};
 //TypeScript Example
 
 // const openModal = (modal: Element | null, overlay: Element | null) => {
@@ -99,7 +106,13 @@ const showModalHandler = (event) => {
     </div>
 
     <button class="button" data-set-target="#modal" @click="showModalHandler">Open Modal</button>
-
+    <div class="upload">
+      <form @submit.prevent="uploadData">
+        <label for="upload">Upload image</label>
+        <input type="file" name="upload" @change="onChange" />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
     <div class="modal_popup" id="modal">
       <div class="modal_header">
         <h3>Example Modal</h3>

@@ -135,6 +135,15 @@ const clickOnButton = () => {
       background: var(--danger-hover);
     }
   }
+  &_dark {
+    background: var(--second);
+    color: #fff;
+    border: 1px solid var(--color-orange);
+
+    &:enabled:hover {
+      background: var(--second-hover);
+    }
+  }
   &:disabled {
     opacity: 0.6;
     cursor: default;

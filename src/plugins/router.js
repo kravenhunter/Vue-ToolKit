@@ -38,6 +38,15 @@ const routes = [
     component: () => import("@/views/Adaptive.vue"),
   },
   {
+    path: "/editors",
+    name: "EditorTab",
+    meta: {
+      enterClass: "animate__animated animate__fadeInRight",
+      leaveClass: "animate__animated animate__fadeOutLeft",
+    },
+    component: () => import("@/views/EditorView.vue"),
+  },
+  {
     path: "/typography",
     name: "typography",
     meta: {

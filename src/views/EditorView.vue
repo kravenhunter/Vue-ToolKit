@@ -1,7 +1,7 @@
 <template>
-  <div class="cards">
+  <div class="editors">
     <!--     <img  src="@/assets/img/Leopard.jpg" :alt="name" >
-            <img  src="../assets/img/Leopard.jpg" :alt="name" > -->
+              <img  src="../assets/img/Leopard.jpg" :alt="name" > -->
     <AddTabs :names="tabs" :selectedTab="selectedTab" @changeTab="changeTab">
       <div class="page"></div>
       <Transition name="accordions" mode="out-in">
@@ -12,21 +12,16 @@
 </template>
 
 <script setup>
-import AccordionSingle from "@/components/Accordions/JS/AccordionSingle.vue";
-import AccodnionsJS from "@/components/Accordions/JS/Accordions.vue";
-import AccodnionsVue from "@/components/Accordions/Vue/Accrodions.vue";
+import EditorTab from "@/components/Editors/EditorTab.vue";
 import AddTabs from "@/components/UI/AddTabs.vue";
 import { ref, shallowRef } from "vue";
 
 /* const req = required('@/assets/img/Leopard.jpg'); */
 
-const tabs = [
-  { name: "JS Accordion-Single", label: "JS Accordion-Single", comp: AccordionSingle },
-  { name: "JS Accordion-Massive", label: "JS Accordion-Massive", comp: AccodnionsJS },
-  { name: "Vue Accordion", label: "Vue Accordion", comp: AccodnionsVue },
-];
-const selectedTab = ref("JS Accordion-Single");
-const activeComponent = shallowRef(AccordionSingle);
+const tabs = [{ name: "EditorTab", label: "Editor", comp: EditorTab }];
+const selectedTab = ref("EditorTab");
+const activeComponent = shallowRef(EditorTab);
+
 const changeTab = (tabName) => {
   selectedTab.value = tabs.find((c) => c.name === tabName).name;
   activeComponent.value = tabs.find((c) => c.name === tabName).comp;
