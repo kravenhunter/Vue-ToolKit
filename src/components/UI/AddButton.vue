@@ -39,6 +39,14 @@ const props = defineProps({
     type: String,
     default: "default",
   },
+  title: {
+    type: String,
+    default: "label",
+  },
+  enableSlot: {
+    type: Boolean,
+    default: false,
+  },
 });
 //Регистрируем кастомное событие @test
 const emit = defineEmits(["test"]);
@@ -49,15 +57,22 @@ const clickOnButton = () => {
 </script>
 
 <template>
-  <!-- <button
-     :class="['btn', `btn_${color}`, 
-     { btn_rounded: rounded },
-     { btn_outlined: outlined }, 
-     { btn_icon: icon },
-      { btn_large: size === 'large' }]" 
-      :disabled="disabled" @click="$emit('test', $event?.target.value)"> -->
   <button
+    v-if="enableSlot"
     :set-target="setTarget"
+    :title="title"
+    v-bind="$attrs"
+    type="submit"
+    :class="['btn', `btn_${color}`, { btn_rounded: rounded }, { btn_outlined: outlined }, { btn_icon: icon }]"
+    :disabled="disabled"
+    @click="$emit('test', ' $event?.target?.value')"
+  >
+    <slot />
+  </button>
+  <button
+    v-if="!enableSlot"
+    :set-target="setTarget"
+    v-bind="$attrs"
     type="submit"
     :class="['btn', `btn_${color}`, { btn_rounded: rounded }, { btn_outlined: outlined }, { btn_icon: icon }]"
     :disabled="disabled"
@@ -79,6 +94,11 @@ const clickOnButton = () => {
   font-size: v-bind(fontSize);
   font-weight: 600;
   transition: 0.2s;
+  &_default {
+    padding: 0;
+
+    background-color: transparent;
+  }
   &_primary {
     background: var(--primary);
     color: #fff;

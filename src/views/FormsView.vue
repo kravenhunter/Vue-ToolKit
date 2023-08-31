@@ -1,6 +1,7 @@
 <script setup>
 import Input from "@/components/Forms/Input/Input.vue";
 import GoogleForm from "@/components/Forms/Login/GoogleForm.vue";
+import LoginDarkForm from "@/components/Forms/Login/LoginDarkForm.vue";
 import LoginForm3D from "@/components/Forms/Login/LoginForm3D.vue";
 import LoginFormAnim from "@/components/Forms/Login/LoginFormAnim.vue";
 import LoginFormPurple from "@/components/Forms/Login/LoginFormPurple.vue";
@@ -16,6 +17,7 @@ const tabs = [
   { name: "Login-Form", label: "Form & Animate", comp: LoginFormAnim },
   { name: "Login-Form3d", label: "Form 3D", comp: LoginForm3D },
   { name: "Login-FormPurple", label: "Form Purple", comp: LoginFormPurple },
+  { name: "LoginDarkForm", label: " DarkForm", comp: LoginDarkForm },
   { name: "GoogleForm", label: "Google Form", comp: GoogleForm },
 ];
 const selectedTab = ref("ModalForm");

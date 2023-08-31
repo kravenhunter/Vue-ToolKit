@@ -66,6 +66,15 @@ const routes = [
     component: () => import("@/views/CheckBox.vue"),
   },
   {
+    path: "/transitions",
+    name: "transitions",
+    meta: {
+      enterClass: "animate__animated animate__fadeInRight",
+      leaveClass: "animate__animated animate__fadeOutLeft",
+    },
+    component: () => import("@/views/Transitions.vue"),
+  },
+  {
     path: "/radiobutton",
     name: "radiobutton",
     meta: {
