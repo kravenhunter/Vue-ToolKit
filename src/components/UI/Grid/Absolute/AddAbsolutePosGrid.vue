@@ -25,7 +25,6 @@
     border-radius: 5px;
     padding: 20px;
     transition: 0.5s;
-    //color: #fff;
   }
 }
 

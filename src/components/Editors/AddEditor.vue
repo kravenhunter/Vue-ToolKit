@@ -1,30 +1,4 @@
-<!-- <script>
-import { Editor, EditorContent } from '@tiptap/vue-3'
-import StarterKit from '@tiptap/starter-kit'
 
-export default defineNuxtComponent({
-    components: {
-    EditorContent,
-    },
-    data(){
-        return {
-      editor: null,
-     }
-    },
-    mounted(){
-      this.editor = new Editor({
-      content: '<p>I’m running Tiptap with Vue.js. 🎉</p>',
-      extensions: [
-        StarterKit,
-      ],
-    })
-    },
-     beforeUnmount(){
-        this.editor.destroy()
-     }
-})
-
-</script> -->
 
 <script setup>
 import CharacterCount from "@tiptap/extension-character-count";
@@ -39,6 +13,33 @@ import StarterKit from "@tiptap/starter-kit";
 import { EditorContent, useEditor } from "@tiptap/vue-3";
 import { ref } from "vue";
 
+// <!-- <script>
+// import { Editor, EditorContent } from '@tiptap/vue-3'
+// import StarterKit from '@tiptap/starter-kit'
+
+// export default defineNuxtComponent({
+//     components: {
+//     EditorContent,
+//     },
+//     data(){
+//         return {
+//       editor: null,
+//      }
+//     },
+//     mounted(){
+//       this.editor = new Editor({
+//       content: '<p>I’m running Tiptap with Vue.js. 🎉</p>',
+//       extensions: [
+//         StarterKit,
+//       ],
+//     })
+//     },
+//      beforeUnmount(){
+//         this.editor.destroy()
+//      }
+// })
+
+// </script> -->
 const props = defineProps({
   modelValue: {
     type: String,

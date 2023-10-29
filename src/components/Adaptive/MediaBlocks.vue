@@ -21,7 +21,7 @@
   display: grid;
   grid-template-columns: 1fr 300px;
   grid-template-rows: 60vh;
-  grid-auto-rows: 100px; // остальные не явные строки будут по 100px
+  grid-auto-rows: 100px;
   gap: 15px;
   color: aliceblue;
 }
@@ -50,7 +50,7 @@
   }
   .section_adaptive {
     width: 480px;
-    grid-template-columns: 1fr; // задаем одну колноку
+    grid-template-columns: 1fr;
   }
 }
 @media (max-width: 480px) {
@@ -58,7 +58,7 @@
     font-size: 6.5vw;
   }
   .section_adaptive {
-    width: 100%; //   width: 480px;
+    width: 100%;
   }
 }
 </style>

@@ -1,29 +1,10 @@
-
-
 <template>
-  <div :class="[{'switch-container': type === 'switch'}]">
-   <!-- Чтобы интегрировать в атрибут значение из пропса прописываем их таким  образом 
-    :name="name"
-      :id="id"
-      :value="value"
-      :checked="checked"
-      :disabled="disabled"
--->
-<!-- :class="[{'checkbox': type === 'checkbox'}, {'switch': type === 'switch'}]"  - Переключаемся между классами 
-в зависимости от переданного props.type -->
-    <input
-      :class="[{'checkbox': type === 'checkbox'}, {'switch': type === 'switch'}]"
-      type="checkbox"
-      :name="name"
-      :id="id"
-      :value="value"
-      :checked="checked"
-      :disabled="disabled"
-      @input="handleClick($event)">
-      <!--label - доя кружка-->
-    <label :for="id">{{label}}</label> 
-    <!--label - доя текста-->
-    <label :for="id" class="switch__label" v-if="type === 'switch'">{{label}}</label>
+  <div :class="[{ 'switch-container': type === 'switch' }]">
+    <input :class="[{ checkbox: type === 'checkbox' }, { switch: type === 'switch' }]" type="checkbox" :name="name" :id="id" :value="value" :checked="checked" :disabled="disabled" @input="handleClick($event)" />
+
+    <label :for="id">{{ label }}</label>
+
+    <label :for="id" class="switch__label" v-if="type === 'switch'">{{ label }}</label>
   </div>
 </template>
 
@@ -38,7 +19,7 @@
     user-select: none;
   }
   & + label::before {
-    content: '';
+    content: "";
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -61,7 +42,7 @@
   }
   &:not(:disabled):active + label::before {
     background-color: var(--primary);
-    border: 1px solid #ECEBED;
+    border: 1px solid #ecebed;
   }
   &:focus + label::before {
     box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.07);
@@ -71,13 +52,13 @@
   }
   &:disabled + label::before {
     background-color: #e9ecef;
-    border: 1px solid #ECEBED;
+    border: 1px solid #ecebed;
   }
 }
 .switch {
-	height: 0;
-	width: 0;
-	visibility: hidden;
+  height: 0;
+  width: 0;
+  visibility: hidden;
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -110,7 +91,7 @@
       border-radius: 90px;
       transition: 0.3s;
       transform: translateY(-50%);
-      }
+    }
   }
   &:checked {
     & + label {
@@ -125,62 +106,56 @@
       }
     }
   }
-} 
+}
 </style>
-<!-- <script  >
-// назначаем имя компонента для регистрации в проекте
-/*  export default {
-  name: "add-chackbox",
-}; */
-</script> -->
-<script setup>
-  
-  // emits  используемя дла передачи изменений на верх родительскому компоненту
-  // перехватываем событие обновление checked из родителя  v-model:checked="checkboxActive"/
-  const emits = defineEmits(['update:checked', 'updateCheckboxGroup'])
-  const props = defineProps({
-    name: {
-      type: String,
-      default: ''
-    },
-    id: {
-      type: String,
-      default: ''
-    },
-    value: {
-      type: String,
-      default: ''
-    },
-    label: {
-      type: String,
-      default: ''
-    },
-    checked: {
-      type: Boolean,
-      default: false
-    },
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    group: {
-      type: Boolean,
-      default: false
-    },
-    type: {
-      type: String,
-      default: 'checkbox'
-    }
-  })
-  const handleClick = (event) => {
-    console.log('AddChackBox ->event',event) // можно прчитаеть просходящие события 
 
-    // Если прищеждший пропс  group =true  то вызываем эмитс
-    if (props.group) {
-      emits('updateCheckboxGroup', {optionId: props.id, checked: event.target.checked})
-    } else {
-        // если props.group нету то вызываем обновление чек-бокса
-      emits('update:checked', event.target.checked)
-    }
+<script setup>
+// emits  используемя дла передачи изменений на верх родительскому компоненту
+// перехватываем событие обновление checked из родителя  v-model:checked="checkboxActive"/
+const emits = defineEmits(["update:checked", "updateCheckboxGroup"]);
+const props = defineProps({
+  name: {
+    type: String,
+    default: "",
+  },
+  id: {
+    type: String,
+    default: "",
+  },
+  value: {
+    type: String,
+    default: "",
+  },
+  label: {
+    type: String,
+    default: "",
+  },
+  checked: {
+    type: Boolean,
+    default: false,
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
+  group: {
+    type: Boolean,
+    default: false,
+  },
+  type: {
+    type: String,
+    default: "checkbox",
+  },
+});
+const handleClick = (event) => {
+  console.log("AddChackBox ->event", event); // можно прчитаеть просходящие события
+
+  // Если прищеждший пропс  group =true  то вызываем эмитс
+  if (props.group) {
+    emits("updateCheckboxGroup", { optionId: props.id, checked: event.target.checked });
+  } else {
+    // если props.group нету то вызываем обновление чек-бокса
+    emits("update:checked", event.target.checked);
   }
+};
 </script>

@@ -23,16 +23,6 @@ const elements = ref([
   },
 ]);
 
-/* const isOpen = ref(false);
-const accordionClasses = computed(() => {
-
-        return  { 'is-open': isOpen.value};
-}); */
-
-/* const accordionClasses2 = computed(() => {
-   
-return  { 'is-open': isOpen.value };
-}); */
 const isSHowMenu = ref(false);
 
 const testShow = ref(true);
@@ -40,13 +30,10 @@ const toggleClick = () => {
   isOpen.value = !isOpen.value;
   console.log(" isOpen.value", isOpen.value);
 };
-/* const isOpen = ref(false); */
+
 const toggleAccrodion = (id) => {
   console.log("id");
-  /* const inx = elements.value.findIndex(el => el.id === id );
-    console.log('elements.value', elements.value);
-    elements.value[inx].isOpen = !elements.value[inx].isOpen */
-  //document.getElementById(id).classList.toggle('active')
+
   let isOpen = document.getElementById(id).classList.contains("is-open");
 
   if (!isOpen) {
@@ -54,8 +41,6 @@ const toggleAccrodion = (id) => {
   } else {
     document.getElementById(id).classList.remove("is-open");
   }
-  //isOpen.value =   !isOpen.value;
-  //console.log('inx', inx);
 };
 </script>
 <template>
@@ -183,11 +168,8 @@ const toggleAccrodion = (id) => {
   gap: 20px;
   align-content: start;
   z-index: 50;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
+
   min-height: 100vh;
-  //  background: #bedfe8;
 }
 
 .toggle_test {
@@ -198,9 +180,7 @@ const toggleAccrodion = (id) => {
   padding: 20px;
   background: var(--second);
   color: #fff;
-  // transition: transform 0.7s;
-  // transition: opacity 1s;
-  // transition: transform 0.7s;
+
   transition: all 1.3s;
   opacity: 0;
   & ul {
@@ -212,8 +192,7 @@ const toggleAccrodion = (id) => {
   }
   &.active_menu {
     transform: translateY(100%);
-    // transition: opacity 0.2s;
-    // transition: transform 0.7s;
+
     opacity: 1;
     z-index: -10;
   }

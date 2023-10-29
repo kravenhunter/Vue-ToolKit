@@ -38,19 +38,16 @@ const getLinkEffect = (num) => `/images/effects/effect${num}.jpg`;
   margin-bottom: 10px;
 }
 .optimize {
-  // object-fit: contain; /scale-down //показывает уменьшеннное изображение в блоки не зависимо  какого большего разрешение оно
-  object-fit: cover; // показывает  обрезанное изображение  cover / fill(растяшивает) / none (идентично с cover )
-  // object-position: top left;  / показывает какой кусок изображние показывать
+  object-fit: cover;
 
   width: 100%;
   height: 100%;
-  // height: 500px;
 }
 .image_adaptive {
   background-color: var(--color-darkBlue);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  align-content: start; // устраняем лишние отсупы
+  align-content: start;
   gap: 10px;
 }
 

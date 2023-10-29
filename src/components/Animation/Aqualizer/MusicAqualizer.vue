@@ -153,13 +153,6 @@ onMounted(() => {
             </Transition>
           </ul>
         </div>
-        <!--  Пример для списка  -->
-        <!-- <TransitionGroup tag="ul" name="fade" class="container">
-          <div class="name_block" v-for="item in selectedSong" :key="item">
-            <h4>{{ item.artist }}</h4>
-            <span>{{ item.songName }}</span>
-          </div>
-        </TransitionGroup> -->
 
         <div class="progress_block">
           <span class="current">{{ correntTime }}</span>
@@ -190,8 +183,6 @@ onMounted(() => {
         </div>
       </div>
     </div>
-
-    <!-- <img src="images/effects/effect0.jpg" alt="" /> -->
   </div>
 </template>
 

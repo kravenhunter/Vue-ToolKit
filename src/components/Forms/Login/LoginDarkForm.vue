@@ -17,7 +17,7 @@
           <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault" />
           <label class="form-check-label" for="flexCheckDefault"> Remember me </label>
         </div>
-        <!--   <button type="button" class="btn btn-primary w-100 py-2" @click="authState = !authState">Sign in</button> -->
+
         <div class="buttons">
           <button @click.prevent="login" type="button" class="btn btn-primary w-100 py-2">Sign in</button>
 

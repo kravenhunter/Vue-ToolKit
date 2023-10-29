@@ -52,15 +52,6 @@ const submitForm = (event) => {
 
 <template>
   <div class="login_form image">
-    <!--    <input
-      class="input-text"
-      :type="type"
-      :name="name"
-      :id="name"
-      :placeholder="placeholder"
-      :value="propValue"
-      @input="$emit('update:propValue', ($event?.target as HTMLInputElement).value)" />
-    <label :for="name" class="input-label">{{ label }}</label> -->
     <form @submit.prevent="submitForm">
       <add-input label="YOUR FIRSTNAME" :colorLabel="true" name="firstName" placeholder="Input your first name" v-model:value="validation.firstNameField.$model" :error="validation.firstNameField.$errors" />
       <add-input label="YOUR LASTNAME" :colorLabel="true" name="lastName" placeholder="Input your last Name" v-model:value="validation.lastNameField.$model" :error="validation.lastNameField.$errors" />
@@ -102,7 +93,7 @@ const submitForm = (event) => {
   padding: 30px 0;
 }
 .image {
-  background-size: cover; /*cover / auto / contain */
+  background-size: cover;
   max-width: 500px;
   min-height: 600px;
   background-image: linear-gradient(rgb(62, 54, 131), rgba(62, 54, 131, 0.67), rgb(62 54 131 / 92%)), url("@/assets/img/login_img.jpg");

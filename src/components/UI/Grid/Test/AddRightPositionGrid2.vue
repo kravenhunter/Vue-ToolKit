@@ -50,19 +50,12 @@
     background-color: #ffd8a8;
     border: 2px solid #ffa94d;
     border-radius: 5px;
-
-    //color: #fff;
   }
 }
 .grid-container-fill {
-  /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-           grid-template-rows: repeat(4, 65px);
-           grid-column-gap: 2rem;
-           grid-row-gap: 1rem; */
-
   column-gap: 5px;
   row-gap: 1rem;
-  // 2 строки
+
   grid-template-rows:
     [headerBlock] 100px
     [bodyBlock] auto
@@ -75,10 +68,8 @@
 }
 
 .header {
-  // координаты блока
-  // блок header распологается в строке headerBlock
   grid-row: headerBlock;
-  // блок header распологается в колонках  от sidebar до  contentBlock
+
   grid-column: left-gutter / right-gutter;
 }
 
@@ -87,8 +78,7 @@
   grid-column: left-gutter / right-gutter;
 
   display: grid;
-  //блоки равномерно растягиваются по размеру
-  //если блок становится меньше 500 идет перенос на другую строку
+
   grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
 }
 
@@ -99,8 +89,7 @@
 
 .contentblock {
   display: grid;
-  //  так как окончатльный размер блока bodyBlock  500px ток нужно правильно расчитать размер блока contentblock чтобы при сжимании
-  // происходил перенос
+
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 }
 </style>

@@ -21,7 +21,7 @@ const links = ref([
   { name: "ButtonConfig", href: "/buttonconfig" },
   { name: "CheckBox & Events", href: "/checkbox" },
   { name: "Grid & Events", href: "/grid" },
-  /*       {name: 'Flex', href: '/flex'}, */
+
   { name: "RadioButton", href: "/radiobutton" },
   { name: "ProgressBar", href: "/progressbar" },
   { name: "Forms", href: "/forms" },
@@ -29,17 +29,15 @@ const links = ref([
   { name: "Tables", href: "/table" },
   { name: "Cards Page", href: "/cards" },
   { name: "Comments", href: "/comments" },
-  /*        {name: 'Paralax', href: '/paralax'},
-       {name: 'List', href: '/canvas'},
-       {name: 'Tougle', href: '/tougle'},
-       {name: 'Animation', href: '/anime'},
-       {name: 'Images', href: '/image'},
-       {name: 'Canvas', href: '/canvas'}, */
+  // {name: 'Paralax', href: '/paralax'},
+  //      {name: 'List', href: '/canvas'},
+  //      {name: 'Tougle', href: '/tougle'},
+  //      {name: 'Animation', href: '/anime'},
+  //      {name: 'Images', href: '/image'},
+  //      {name: 'Canvas', href: '/canvas'},
 ]);
 </script>
 
-<!-- доп класс sidebar_isopen добавляется тогда когда openSidebar = true-->
-<!--можно записать так  {sidebar_isopen: openSidebar === true}] -->
 <template>
   <div :class="['sidebar', { sidebar_isopen: openSidebar }]">
     <router-link class="sidebar__link" v-for="link in links" :key="link.name" :to="link.href">{{ link.name }}</router-link>
@@ -57,7 +55,7 @@ const links = ref([
   transition: 0.2s;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.07);
   transform: translateX(-250px);
-  //sidebar_isopen
+
   &_isopen {
     transform: translateX(0px);
   }

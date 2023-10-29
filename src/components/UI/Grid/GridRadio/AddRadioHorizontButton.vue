@@ -1,55 +1,44 @@
 <template>
-  <input
-    class="radiobutton"
-    type="radio"
-    :name="name"
-    :id="id"
-    :value="horizontalPosition"
-    :checked="checked"
-    :disabled="disabled"
-    @input="handleHorizontClick($event)">
-  <label :for="id">{{label}}</label>
+  <input class="radiobutton" type="radio" :name="name" :id="id" :value="horizontalPosition" :checked="checked" :disabled="disabled" @input="handleHorizontClick($event)" />
+  <label :for="id">{{ label }}</label>
 </template>
 
 <script setup>
-  
-  const props = defineProps({
-    name: {
-      type: String,
-      default: ''
-    },
-    id: {
-      type: String,
-      default: ''
-    },
- 
-   
-    horizontalPosition: {
-      type: String,
-      default: ''
-    },
-    label: {
-      type: String,
-      default: ''
-    },
-    checked: {
-      type: Boolean,
-      default: false
-    },
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    group: {
-      type: Boolean,
-      default: false
-    }
-  })
-  const emits = defineEmits(['updateHorizont'])
-  const handleHorizontClick = (event) => {
-  /*   console.log('handleHorizontClick',event.target.value ); */
-    emits('updateHorizont', event.target.value)
-  }
+const props = defineProps({
+  name: {
+    type: String,
+    default: "",
+  },
+  id: {
+    type: String,
+    default: "",
+  },
+
+  horizontalPosition: {
+    type: String,
+    default: "",
+  },
+  label: {
+    type: String,
+    default: "",
+  },
+  checked: {
+    type: Boolean,
+    default: false,
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
+  group: {
+    type: Boolean,
+    default: false,
+  },
+});
+const emits = defineEmits(["updateHorizont"]);
+const handleHorizontClick = (event) => {
+  emits("updateHorizont", event.target.value);
+};
 </script>
 
 <style lang="scss" scoped>
@@ -63,7 +52,7 @@
     user-select: none;
   }
   & + label::before {
-    content: '';
+    content: "";
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -87,7 +76,7 @@
   }
   &:not(:disabled):active + label::before {
     background-color: var(--primary);
-    border: 1px solid #ECEBED;
+    border: 1px solid #ecebed;
   }
   &:focus + label::before {
     box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.07);
@@ -97,7 +86,7 @@
   }
   &:disabled + label::before {
     background-color: #e9ecef;
-    border: 1px solid #ECEBED;
+    border: 1px solid #ecebed;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
   }
 }

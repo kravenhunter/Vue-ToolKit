@@ -108,13 +108,11 @@
 }
 @keyframes animate {
   0% {
-    // масштаб объекта- виден
     transform: scale(1);
   }
 
   60%,
   100% {
-    // масштаб объекта- не виден
     transform: scale(0);
   }
 }

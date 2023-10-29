@@ -8,7 +8,6 @@ const getLinkEffect = (num) => `/images/effects/effect${num}.jpg`;
     <div class="layout_block">
       <h1 class="adaptive_title">Layout Optimization</h1>
       <div class="layout section_layout">
-        <!-- HEADER -->
         <div class="header">
           <h2>LOGO</h2>
           <ul class="list">
@@ -42,7 +41,7 @@ const getLinkEffect = (num) => `/images/effects/effect${num}.jpg`;
             </div>
           </div>
         </div>
-        <!-- SIDEBAR -->
+
         <div class="sidebar">
           <h3>News</h3>
           <div class="form">
@@ -50,7 +49,7 @@ const getLinkEffect = (num) => `/images/effects/effect${num}.jpg`;
             <button class="btn">Subscribe</button>
           </div>
         </div>
-        <!-- FOOTER -->
+
         <div class="footer">
           <h3>FOOTER</h3>
         </div>
@@ -70,7 +69,8 @@ const getLinkEffect = (num) => `/images/effects/effect${num}.jpg`;
   display: none;
 }
 .cart .cart_image {
-  object-fit: cover; // показывает  обрезанное изображение  cover / fill(растяшивает) / none (идентично с cover )
+  object-fit: cover;
+
   height: 100%;
   width: 100%;
 }
@@ -78,7 +78,8 @@ const getLinkEffect = (num) => `/images/effects/effect${num}.jpg`;
   overflow: hidden;
 }
 .optimize_image {
-  object-fit: cover; // показывает  обрезанное изображение  cover / fill(растяшивает) / none (идентично с cover )
+  object-fit: cover;
+
   height: 100%;
 }
 .section_layout {
@@ -92,12 +93,12 @@ const getLinkEffect = (num) => `/images/effects/effect${num}.jpg`;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, auto);
-  grid-auto-rows: 200px; // для не явных строк  таких как футер
+  grid-auto-rows: 200px;
   gap: 10px;
 }
 .header {
   grid-row: 1;
-  grid-column: span 3; // grid-column: span 3; 1 /-1;
+  grid-column: span 3;
 
   color: aliceblue;
   display: grid;
@@ -184,14 +185,14 @@ const getLinkEffect = (num) => `/images/effects/effect${num}.jpg`;
     grid-template-columns: 1fr;
   }
   .cart {
-    grid-template-columns: 1fr 2fr; //repeat(2, auto)
+    grid-template-columns: 1fr 2fr;
     grid-auto-rows: auto;
   }
 }
 
 @media (max-width: 1000px) {
   .cart {
-    grid-template-columns: 1fr; //repeat(2, auto)
+    grid-template-columns: 1fr;
     grid-template-rows: 40vw;
     grid-auto-rows: auto;
   }

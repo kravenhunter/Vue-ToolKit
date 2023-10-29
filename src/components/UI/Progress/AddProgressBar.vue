@@ -1,9 +1,8 @@
 <template>
-  <div class="progress-container" :style="[{'max-width': maxWidth}]">
-    <!-- :style="[{'color': `var(--${color})`}] - динамически меняем цвет бара -->
-    <span class="progress-percent" :style="[{'color': `var(--${color})`}]">{{percent}}%</span>
-    <div class="progress" :style="[{'background': `var(--${color}-hover)`}]">
-      <div class="progress-bar" :style="[{'width': `${percent}%`}, {'background': `var(--${color})`}]"></div>
+  <div class="progress-container" :style="[{ 'max-width': maxWidth }]">
+    <span class="progress-percent" :style="[{ color: `var(--${color})` }]">{{ percent }}%</span>
+    <div class="progress" :style="[{ background: `var(--${color}-hover)` }]">
+      <div class="progress-bar" :style="[{ width: `${percent}%` }, { background: `var(--${color})` }]"></div>
     </div>
   </div>
 </template>
@@ -20,7 +19,7 @@
     background: #000;
     height: 100%;
     border-radius: 4px;
-    transition: .5s;
+    transition: 0.5s;
   }
   &-percent {
     display: block;
@@ -36,15 +35,15 @@
 const props = defineProps({
   maxWidth: {
     type: String,
-    default: '300px'
+    default: "300px",
   },
   percent: {
     type: Number,
-    required: true
+    required: true,
   },
   color: {
     type: String,
-    default: 'warning'
-  }
-})
+    default: "warning",
+  },
+});
 </script>

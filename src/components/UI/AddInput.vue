@@ -44,9 +44,7 @@ const updateValue = (e) => {
   <div class="form-input" :style="{ width: width }">
     <input class="input-text" :type="type" :name="name" :id="name" :placeholder="placeholder" :value="value" @input="updateValue" />
     <label :for="name" class="input-label" :class="colorLabel ? 'color_light' : 'color_violet'">{{ label }}</label>
-    <!-- Блок для вывода ошибок
-        TransitionGroup - тег для выполнения анимации
-     -->
+
     <TransitionGroup name="errors">
       <div class="form-error" v-for="element of error" :key="element.$uid">
         <div class="form-error__message">{{ element.$message }}</div>

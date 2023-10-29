@@ -15,7 +15,6 @@ const accordionClasses = computed(() => {
 const toggleAccrodion = () => {
   console.log("id");
   isOpen.value = !isOpen.value;
-  //console.log('inx', inx);
 };
 </script>
 
@@ -42,8 +41,6 @@ const toggleAccrodion = () => {
   </div>
 </template>
 
-x
-
 <style lang="scss" scoped>
 .contentBox {
   margin: 10px 20px;
@@ -61,9 +58,9 @@ x
   position: absolute;
   top: 50%;
   right: 20px;
-  // выравниваем позицию  и без кручения
+
   transform: translateY(-50%) rotate(0deg);
-  // добавляем анимацию применимую к этому блоку
+
   transition: all 0.5s ease;
   font-size: 1.5em;
 }
@@ -73,21 +70,14 @@ x
   max-height: 10rem;
   overflow: hidden;
 
-  /*     overflow: hidden;
-  overflow-y: auto;
-   ; */
-
-  // добавляем анимацию применимую к этому блоку
   transition: 0.6s;
 }
 .is-open .contentBox-content {
   max-height: 0;
 }
 .is-open .label::before {
-  //Суть в том что при обращении к этому блоку будет происходит анимация(transition),так оно работает , инчае резкий переход
-  // выравниваем позицию  и с кручения
   transform: translateY(-50%) rotate(135deg);
-  // добавляем анимацию применимую к этому блоку
+
   transition: all 0.5s ease;
 }
 </style>

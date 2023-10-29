@@ -1,7 +1,7 @@
 <template>
-<header class="header">
-    <router-link to="/">UI KiT Main page(Vue3 + Composition API)</router-link> 
-</header>
+  <header class="header">
+    <router-link to="/">UI KiT Main page(Vue3 + Composition API)</router-link>
+  </header>
 </template>
 
 <style lang="scss" scoped>

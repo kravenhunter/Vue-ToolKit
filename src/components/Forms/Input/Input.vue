@@ -48,8 +48,7 @@ const submitForm = (event) => {
 <template>
   <div class="page-content">
     <h1 class="heading-1">Inputs</h1>
-    <!-- v.nameField.$model - содержит вводимые данные -->
-    <!--  v.nameField.$errors - содержит массив ошибок-->
+
     <form @submit.prevent="submitForm">
       <add-input label="Your name" name="name" placeholder="Input your name" v-model:value="validation.nameField.$model" :error="validation.nameField.$errors" />
 

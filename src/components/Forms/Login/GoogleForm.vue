@@ -26,20 +26,6 @@ function submit() {
 </script>
 
 <template>
-  <!--     <div class="block">
-        <label class="form__label">Your Email</label>
-        <input type="text" placeholder="Email" v-model.trim="stateForm.emailUser" required />
-        <div class="error" v-if="validateHelper.userName.$error">
-          <div
-            v-for="element of validateHelper.emailUser.$errors"
-            :key="element.$uid"
-            class="form-error__message">
-            {{ element.$message }}
-          </div>
-        </div>
-        <button class="button" type="submit" @click="submitTest">Submit!</button>
-      </div> -->
-
   <div>
     <form class="form_block" @submit.prevent="submit">
       <div class="form_group_inputs">
@@ -84,16 +70,6 @@ function submit() {
         </TransitionGroup>
       </div>
 
-      <!--   <div class="error" v-if="v$.password.confirm.$error">
-            <TransitionGroup name="errors">
-              <div
-                v-for="element of v$.password.confirm.$errors"
-                :key="element.$uid"
-                class="form-error__message">
-                {{ element.$message }}
-              </div>
-            </TransitionGroup>
-          </div> -->
       <add-button label="Submit" fontSize="18px" :disabled="submitStatus === 'PENDING'" />
     </form>
   </div>
@@ -112,16 +88,14 @@ function submit() {
   position: relative;
   width: 100%;
   border: 1px solid var(--color-darkBlue);
-
-  //   z-index: 10;
 }
 
 .form_group_inputs input {
   width: 100%;
   height: 100%;
   border: none;
-  outline: none; /* подчеркивание при активном импуте */
-  background: transparent; /* делаем фон  фоном родителя */
+  outline: none;
+  background: transparent;
   color: var(--color-dark);
   position: absolute;
   bottom: 0;
@@ -156,7 +130,6 @@ function submit() {
   transition: 0.4s;
 }
 
-/* ~ .line - все соседние элементы  */
 .form_group_inputs input:focus ~ .line,
 .form_group_inputs input:valid ~ .line {
   width: calc(100% + 2px);

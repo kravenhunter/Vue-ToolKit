@@ -38,11 +38,9 @@ const toggleMenu = () => {
   <div class="container">
     <div class="sidebar-toggle" @click="toggleMenu">&#5125;</div>
     <layout-header />
-    <!-- можно так  <layout-sidebar  v-if="isOpenMenu"/>-->
-    <!-- создаем property openSidebar которое хранит булевое значение isOpenMenu
-      оно будет передаваться в layout-sidebar -->
+
     <layout-sidebar :openSidebar="isOpenMenu" />
-    <!-- Отображаем content_full когда isOpenMenu !== true-->
+
     <div :class="['content', { content_full: !isOpenMenu }]">
       <div>
         <ul class="list">
@@ -54,15 +52,7 @@ const toggleMenu = () => {
           </li>
         </ul>
       </div>
-      <!-- Анимация из коробки  Vue 3 -->
-      <!--     <router-view v-slot="{ Component, route }">
-          
-              <transition name="fade" mode="out-in">
-                <component :is="Component" :key="route.path" />
-              </transition>
-          </router-view> -->
 
-      <!-- Используем  библиотеку Animate.css  -->
       <div class="page"></div>
       <router-view v-slot="{ Component, route }">
         <transition :enter-active-class="route.meta.enterClass" :leave-active-class="route.meta.leaveClass">
@@ -80,17 +70,16 @@ const toggleMenu = () => {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-//Вход-выход неактивных компонентов
+
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
-  transform: translateX(-30%); // При анимации изчезновения сдвигает  на 30% длины блок а потом удалять из видимости
+  transform: translateX(-30%);
 }
-//Вход активных компонентов
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s, transform 0.5s;
-  //transition: opacity 0.5s, ease-out;
 }
 .page {
   position: relative;
@@ -135,7 +124,6 @@ const toggleMenu = () => {
   justify-content: center;
 }
 
-// медиа запрос для мобильной версии
 @media screen and (max-width: 1023px) {
   .content {
     margin-left: 0;
