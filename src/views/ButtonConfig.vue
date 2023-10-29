@@ -1,9 +1,5 @@
 <script setup>
 //import ButtonCom from '@/components/Button.vue'
-/* import Button from '@/components/Button.vue'
-
-console.log(Button); */
-//import AddTest from '@/components/UI/AddTest.vue'
 
 const eventForButton = (event) => {
   console.log(event);
@@ -13,8 +9,6 @@ const eventForButton = (event) => {
 
 <template>
   <div class="button_container">
-    <!-- <add-test /> Компонент добавляется локально , без регистрации глобально -->
-
     <h1 class="heading-1">Button Configurations</h1>
 
     <div class="event_block block">
@@ -37,8 +31,6 @@ const eventForButton = (event) => {
     <div class="disable_block">
       <h2 class="heading-2">Dicabled</h2>
       <div class="line">
-        <!-- Разные записи передачи одного и того же значения true через пропсы. Все работает одинаково
-            На вкус-->
         <add-button label="Primary" color="primary" disabled />
         <add-button label="Secondary" color="second" :disabled="true" />
       </div>
