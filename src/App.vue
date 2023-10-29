@@ -37,9 +37,9 @@ const toggleMenu = () => {
 <template>
   <div class="container">
     <div class="sidebar-toggle" @click="toggleMenu">&#5125;</div>
-    <layout-header />
+    <LayoutHeader />
 
-    <layout-sidebar :openSidebar="isOpenMenu" />
+    <LayoutSidebar :openSidebar="isOpenMenu" />
 
     <div :class="['content', { content_full: !isOpenMenu }]">
       <div>

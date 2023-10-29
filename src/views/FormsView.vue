@@ -9,8 +9,6 @@ import ModalForm from "@/components/Forms/Login/ModalForm.vue";
 import AddTabs from "@/components/UI/AddTabs.vue";
 import { ref, shallowRef } from "vue";
 
-/* const req = required('@/assets/img/Leopard.jpg'); */
-
 const tabs = [
   { name: "ModalForm", label: "Modal Form", comp: ModalForm },
   { name: "Registration", label: "Registration & Validation", comp: Input },
@@ -31,8 +29,6 @@ const changeTab = (tabName) => {
 
 <template>
   <div class="cards">
-    <!--     <img  src="@/assets/img/Leopard.jpg" :alt="name" >
-            <img  src="../assets/img/Leopard.jpg" :alt="name" > -->
     <AddTabs :names="tabs" :selectedTab="selectedTab" @changeTab="changeTab">
       <div class="page"></div>
       <Transition name="forms" mode="out-in">

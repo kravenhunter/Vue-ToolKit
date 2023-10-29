@@ -1,7 +1,5 @@
 <template>
   <div class="cards">
-    <!--     <img  src="@/assets/img/Leopard.jpg" :alt="name" >
-              <img  src="../assets/img/Leopard.jpg" :alt="name" > -->
     <AddTabs :names="tabs" :selectedTab="selectedTab" @changeTab="changeTab">
       <div class="page"></div>
       <Transition name="accordions" mode="out-in">
@@ -16,8 +14,6 @@ import AnimateList from "@/components/Transitions/AnimateList.vue";
 
 import AddTabs from "@/components/UI/AddTabs.vue";
 import { ref, shallowRef } from "vue";
-
-/* const req = required('@/assets/img/Leopard.jpg'); */
 
 const tabs = [{ name: "AnimateList", label: "Animate List", comp: AnimateList }];
 const selectedTab = ref("AnimateList");

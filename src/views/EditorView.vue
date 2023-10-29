@@ -1,7 +1,5 @@
 <template>
   <div class="editors">
-    <!--     <img  src="@/assets/img/Leopard.jpg" :alt="name" >
-              <img  src="../assets/img/Leopard.jpg" :alt="name" > -->
     <AddTabs :names="tabs" :selectedTab="selectedTab" @changeTab="changeTab">
       <div class="page"></div>
       <Transition name="accordions" mode="out-in">
@@ -15,8 +13,6 @@
 import EditorTab from "@/components/Editors/EditorTab.vue";
 import AddTabs from "@/components/UI/AddTabs.vue";
 import { ref, shallowRef } from "vue";
-
-/* const req = required('@/assets/img/Leopard.jpg'); */
 
 const tabs = [{ name: "EditorTab", label: "Editor", comp: EditorTab }];
 const selectedTab = ref("EditorTab");

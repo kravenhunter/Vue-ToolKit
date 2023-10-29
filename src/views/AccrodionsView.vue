@@ -1,7 +1,5 @@
 <template>
   <div class="cards">
-    <!--     <img  src="@/assets/img/Leopard.jpg" :alt="name" >
-            <img  src="../assets/img/Leopard.jpg" :alt="name" > -->
     <AddTabs :names="tabs" :selectedTab="selectedTab" @changeTab="changeTab">
       <div class="page"></div>
       <Transition name="accordions" mode="out-in">

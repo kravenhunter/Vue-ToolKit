@@ -6,23 +6,12 @@
         <component :is="activeComponent"></component>
       </Transition>
     </AddTabs>
-
-    <!--       
-            <label>
-              <input type="radio" v-model="activeComponent" :value="CompA"> A
-            </label>
-              <label>
-                  <input type="radio" v-model="activeComponent" :value="CompB"> B
-                </label>
-            <Transition name="fade" mode="out-in">
-                <component :is="activeComponent"></component>
-              </Transition> -->
   </div>
 </template>
 
 <script setup>
 import { ref, shallowRef } from "vue";
-/* import AddCheckboxGroup from '@/components/UI/CheckBoxUI/AddCheckboxGroup.vue' */
+
 import AddTabs from "@/components/UI/AddTabs.vue";
 import AddAbsolutePosGrid from "@/components/UI/Grid/Absolute/AddAbsolutePosGrid.vue";
 import AddAutoFill from "@/components/UI/Grid/Autofill/AddAutoFill.vue";
@@ -48,16 +37,6 @@ const changeTab = (tabName) => {
   activeComponent.value = tabs.find((c) => c.name === tabName).comp;
   console.log(tabName);
 };
-
-/* const selectedVerticalRadioGrid = ref('auto')
-const selectedHorizontRadioGrid = ref('auto') */
-/*   watchEffect(() => {
-
-    console.log('watchEffect -> selectedGrid', selectedVerticalRadioGrid.value);
-    console.log('watchEffect -> selectedRadioGrid', selectedHorizontRadioGrid.value);
-  }
-   
-  ) */
 </script>
 
 <style lang="scss" scoped>
