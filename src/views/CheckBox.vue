@@ -1,3 +1,27 @@
+<script setup>
+//  import Button from '@/components/Button.vue'
+import AddCheckBox from "@/components/UI/CheckBoxUI/AddCheckBox.vue";
+import AddCheckboxGroup from "@/components/UI/CheckBoxUI/AddCheckboxGroup.vue";
+import { ref } from "vue";
+
+const checkboxActive = ref(true);
+
+const checkboxDisabled = ref(true);
+
+const checkboxDisabledChecked = ref(true);
+
+// Создаем реаквтивный список данный
+const listOfHeroes = ref([
+  { name: "Spider Man", id: "h1" },
+  { name: "Batman", id: "h2" },
+  { name: "Tor", id: "h3" },
+  { name: "Loki", id: "h4" },
+]);
+//selectedHeroes - список будет хранить выбранных героев
+const selectedHeroes = ref(["h1", "h3"]);
+const switchProfessional = ref(false);
+</script>
+
 <template>
   <div class="page-content">
     <h1 class="heading-1">CheckBoxes</h1>
@@ -23,26 +47,3 @@
     </div>
   </div>
 </template>
-<script setup>
-//  import Button from '@/components/Button.vue'
-import AddCheckBox from "@/components/UI/CheckBoxUI/AddCheckBox.vue";
-import AddCheckboxGroup from "@/components/UI/CheckBoxUI/AddCheckboxGroup.vue";
-import { ref } from "vue";
-
-const checkboxActive = ref(true);
-
-const checkboxDisabled = ref(true);
-
-const checkboxDisabledChecked = ref(true);
-
-// Создаем реаквтивный список данный
-const listOfHeroes = ref([
-  { name: "Spider Man", id: "h1" },
-  { name: "Batman", id: "h2" },
-  { name: "Tor", id: "h3" },
-  { name: "Loki", id: "h4" },
-]);
-//selectedHeroes - список будет хранить выбранных героев
-const selectedHeroes = ref(["h1", "h3"]);
-const switchProfessional = ref(false);
-</script>

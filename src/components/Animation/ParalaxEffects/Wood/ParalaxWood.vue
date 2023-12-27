@@ -1,3 +1,30 @@
+<script setup>
+import { onMounted, ref } from "vue";
+
+const wrapParalax = ref();
+/* const scrolling = (e) => {
+    const clientHeight = e.target.clientHeight
+    const scrollHeight = e.target.scrollHeight
+    const scrollTop = e.target.scrollTop
+     
+    if (scrollTop + clientHeight >= scrollHeight) {
+      console.log('Yay!')
+     
+    } else {
+        console.log('No!')
+    }
+  } */
+onMounted(() => {
+  wrapParalax.value = document.querySelector(".wrap-paralax");
+
+  window.addEventListener("scroll", (e) => {
+    //  console.log(e);
+    // document.querySelector('.wrap-paralax').style.cssText += `--scrollTop: ${window.scrollY}px`;
+    wrapParalax.value.style.cssText += `--scrollTop: ${window.scrollY}px`;
+  });
+});
+</script>
+
 <template>
   <div class="wrap-paralax" id="smooth-wrapper">
     <div class="content-wrapper" id="smooth-content">
@@ -25,33 +52,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { onMounted, ref } from "vue";
-
-const wrapParalax = ref();
-/* const scrolling = (e) => {
-    const clientHeight = e.target.clientHeight
-    const scrollHeight = e.target.scrollHeight
-    const scrollTop = e.target.scrollTop
-     
-    if (scrollTop + clientHeight >= scrollHeight) {
-      console.log('Yay!')
-     
-    } else {
-        console.log('No!')
-    }
-  } */
-onMounted(() => {
-  wrapParalax.value = document.querySelector(".wrap-paralax");
-
-  window.addEventListener("scroll", (e) => {
-    //  console.log(e);
-    // document.querySelector('.wrap-paralax').style.cssText += `--scrollTop: ${window.scrollY}px`;
-    wrapParalax.value.style.cssText += `--scrollTop: ${window.scrollY}px`;
-  });
-});
-</script>
 
 <style lang="scss" scoped>
 
@@ -148,10 +148,11 @@ margin-top:calc(var(--indexSize) * -1.75);
 }
 
 .main-article{
+  /* объявляем переменную для переиспользования */
     --main-article-transform: transform: translate3d(0, calc(var(--scroll) / -7.5), 0);
     min-height: 100vh;
     color: #e7e7e0;
-    ;
+
     background-size: cover;
     background-position: center;
     display: flex;

@@ -1,5 +1,3 @@
-
-
 <script setup>
 import CharacterCount from "@tiptap/extension-character-count";
 // import Code from "@tiptap/extension-code";
@@ -13,7 +11,7 @@ import StarterKit from "@tiptap/starter-kit";
 import { EditorContent, useEditor } from "@tiptap/vue-3";
 import { ref } from "vue";
 
-// <!-- <script>
+//
 // import { Editor, EditorContent } from '@tiptap/vue-3'
 // import StarterKit from '@tiptap/starter-kit'
 
@@ -39,7 +37,7 @@ import { ref } from "vue";
 //      }
 // })
 
-// </script> -->
+//
 const props = defineProps({
   modelValue: {
     type: String,
